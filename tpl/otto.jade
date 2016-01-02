@@ -1,0 +1,67 @@
+doctype
+html
+	head
+		title= "Twitter"
+		link(rel="stylesheet", href="/otto.css")
+
+	body
+		#wrap
+			form(method="post", action="/iwillgetit/otto")
+				input(type="radio", name="suit", value="clubs")
+				| clubs
+				br
+				input(type="radio", name="suit", value="diamonds")
+				| diamonds
+				br
+				input(type="radio", name="suit", value="hearts")
+				| hearts
+				br
+				input(type="radio", name="suit", value="spades")
+				| spades
+				br
+
+				#seperation
+
+				input(type="radio", name="card", value="0")
+				| ace
+				br
+				input(type="radio", name="card", value="1")
+				| two
+				br
+				input(type="radio", name="card", value="2")
+				| three
+				br
+				input(type="radio", name="card", value="3")
+				| four
+				br
+				input(type="radio", name="card", value="4")
+				| five
+				br
+				input(type="radio", name="card", value="5")
+				| six
+				br
+				input(type="radio", name="card", value="6")
+				| seven
+				br
+				input(type="radio", name="card", value="7")
+				| eight
+				br
+				input(type="radio", name="card", value="8")
+				| nine
+				br
+				input(type="radio", name="card", value="9")
+				| ten
+				br
+				input(type="radio", name="card", value="10")
+				| jack
+				br
+				input(type="radio", name="card", value="11")
+				| queen
+				br
+				input(type="radio", name="card", value="12")
+				| king
+				br
+
+				#seperation
+
+				input#submit(type="submit", value="submit")

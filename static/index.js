@@ -83,8 +83,9 @@ $(document).ready(function() {
 	});
 });
 
-var socket = io();
+var socket = io({ path: '/iwillgetit/socket.io'});
 socket.on('card', function(postDataBody) {
+	console.log(postDataBody);
 	cardToKeep = cardToNum(postDataBody.suit, postDataBody.card);
 	reveal(postDataBody);
 });

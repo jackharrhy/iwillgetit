@@ -1,4 +1,4 @@
-var cardPrefix = "/cards/";
+var cardPrefix = "cards/";
 
 var cardURLs = {
 	clubs: [

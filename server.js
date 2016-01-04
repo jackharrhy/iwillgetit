@@ -14,23 +14,18 @@ app.set('view engine', 'jade');
 app.engine('jade', require('jade').__express);
 
 app.get('/', function(req, res){
-	console.log(req.url);
 	res.render('index');
 });
 
 app.get('/otto', function(req, res){
-	console.log(req.url);
 	res.render('otto');
 });
 app.post('/otto', function(req, res){
-	console.log(req.url);
-	console.log(req.body);
 	io.sockets.emit('card', req.body);
 	res.render('otto');
 });
 
 app.get('*', function(req, res){
-	console.log(req.url);
 	res.send('Error');
 });
 var io = require('socket.io').listen(app.listen(7575));

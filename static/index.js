@@ -48,11 +48,14 @@ function newQuestion() {
 
 var tween = {}, pos, rot;
 function reveal(postDataBody) {
+	console.log(postDataBody);
 	$('#questions').fadeOut(3000);
 
 	var toAdd = cardToNum(postDataBody.suit, postDataBody.card);
-	var c = parseInt(postDataBody.card) + toAdd;
+	var c = toAdd;
 	virCards[c].chosen = true;
+
+	console.log(toAdd);
 
 	rot = { x: virCards[c].cube.rotation.x , y: virCards[c].cube.rotation.y, z: virCards[c].cube.rotation.z };
 	tween.rot = new TWEEN.Tween(rot).to({ x: 0, y: 0, z: 0 }, 6000);
@@ -85,7 +88,6 @@ $(document).ready(function() {
 
 var socket = io({ path: '/iwillgetit/socket.io'});
 socket.on('card', function(postDataBody) {
-	console.log(postDataBody);
 	cardToKeep = cardToNum(postDataBody.suit, postDataBody.card);
 	reveal(postDataBody);
 });

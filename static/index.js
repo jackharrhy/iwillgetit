@@ -48,8 +48,12 @@ function newQuestion() {
 
 var tween = {}, pos, rot;
 function reveal(postDataBody) {
-	console.log(postDataBody);
-	$('#questions').fadeOut(3000);
+	$('h1').html('I HAVE GOT IT!');
+	$('header').css('background-color', 'purple');
+	renderer.setClearColor(0xff11ff1, 1);
+	glitchPass.goWild = true;
+	$('#questions').hide();
+	beep();
 
 	var toAdd = cardToNum(postDataBody.suit, postDataBody.card);
 	var c = toAdd;
@@ -96,9 +100,17 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 
 var renderer = new THREE.WebGLRenderer();
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x003831, 1);
-document.body.appendChild( renderer.domElement );
+document.body.appendChild(renderer.domElement);
+
+var composer = new THREE.EffectComposer(renderer);
+composer.addPass( new THREE.RenderPass(scene, camera));
+
+var glitchPass = new THREE.GlitchPass();
+glitchPass.renderToScreen = true;
+composer.addPass(glitchPass);
 
 var virCards = [];
 
@@ -129,22 +141,30 @@ var render = function () {
 		frame++;
 	}
 
-	renderer.render(scene, camera);
+	if(timeSinceChosen !== 1) {
+		composer.render();
+	} else {
+		renderer.render(scene, camera);
+	}
+
 	requestAnimationFrame(render);
 
 	for(var i=0; i<52; i++) {
 		if(virCards[i].chosen || frame < i * 20) {
 			if(virCards[i].chosen) {
+				virCards[i].cube.position.x = 0 + (Math.random()/3 - 0.16666666);
+				virCards[i].cube.position.y = 0 + (Math.random()/3 - 0.16666666);
+				virCards[i].cube.position.z = 5 + (Math.random()/3 - 0.16666666);
 				timeSinceChosen += 0.005;
 			}
 		} else {
-			virCards[i].cube.position.x += (Math.cos(frame/50 - i/1.2 + Math.random()/10)/20)/timeSinceChosen;
-			virCards[i].cube.position.y -= (Math.sin(frame/50 - i/1.2 + Math.random()/10)/25)/timeSinceChosen;
-			virCards[i].cube.position.z += (Math.sin(frame/50 - i/2)/30)/timeSinceChosen;
+			virCards[i].cube.position.x += (Math.cos(frame/50 - i/1.2 + Math.random()/10)/20) * timeSinceChosen;
+			virCards[i].cube.position.y -= (Math.sin(frame/50 - i/1.2 + Math.random()/10)/25) * timeSinceChosen;
+			virCards[i].cube.position.z += (Math.sin(frame/50 - i/2)/30) * timeSinceChosen;
 
-			virCards[i].cube.rotation.y += (Math.cos(frame/100 + i/10)/40)/timeSinceChosen;
-			virCards[i].cube.rotation.z += (Math.cos(frame/100 + i/10)/50)/timeSinceChosen;
-			virCards[i].cube.rotation.x += (Math.cos(frame/100 + i/10)/60)/timeSinceChosen;
+			virCards[i].cube.rotation.y += (Math.cos(frame/100 + i/10)/40) * (timeSinceChosen);
+			virCards[i].cube.rotation.z += (Math.cos(frame/100 + i/10)/50) * (timeSinceChosen);
+			virCards[i].cube.rotation.x += (Math.cos(frame/100 + i/10)/60) * (timeSinceChosen);
 		}
 	}
 

@@ -58,8 +58,6 @@ function reveal(postDataBody) {
 	var c = toAdd;
 	virCards[c].chosen = true;
 
-	console.log(toAdd);
-
 	rot = { x: virCards[c].cube.rotation.x , y: virCards[c].cube.rotation.y, z: virCards[c].cube.rotation.z };
 	tween.rot = new TWEEN.Tween(rot).to({ x: 0, y: 0, z: 0 }, 6000);
 	tween.rot.onUpdate(function() {

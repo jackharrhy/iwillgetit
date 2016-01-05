@@ -53,7 +53,6 @@ function reveal(postDataBody) {
 	renderer.setClearColor(0xff11ff1, 1);
 	glitchPass.goWild = true;
 	$('#questions').hide();
-	beep();
 
 	var toAdd = cardToNum(postDataBody.suit, postDataBody.card);
 	var c = toAdd;
@@ -136,13 +135,18 @@ scene.add(light);
 
 var frame = -1;
 var timeSinceChosen = 1;
+var canCompose = true;
 var render = function () {
 	if(frameCanInc) {
 		frame++;
 	}
 
 	if(timeSinceChosen !== 1) {
-		composer.render();
+		if(canCompose) {
+			composer.render();
+		} else {
+			renderer.render(scene, camera);
+		}
 	} else {
 		renderer.render(scene, camera);
 	}
@@ -152,9 +156,13 @@ var render = function () {
 	for(var i=0; i<52; i++) {
 		if(virCards[i].chosen || frame < i * 20) {
 			if(virCards[i].chosen) {
-				virCards[i].cube.position.x = 0 + (Math.random()/3 - 0.16666666);
-				virCards[i].cube.position.y = 0 + (Math.random()/3 - 0.16666666);
-				virCards[i].cube.position.z = 5 + (Math.random()/3 - 0.16666666);
+				if(virCards[i].cube.position.x === 0 && virCards[i].cube.position.y === 0 && virCards[i].cube.position.z === 5) {
+					if(canCompose) {
+						$('header').css('background-color', '#007c02');
+						renderer.setClearColor(0x003831, 1);
+					}
+					canCompose = false;
+				}
 				timeSinceChosen += 0.005;
 			}
 		} else {

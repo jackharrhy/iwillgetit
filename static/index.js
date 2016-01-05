@@ -53,13 +53,10 @@ function reveal(postDataBody) {
 	renderer.setClearColor(0xff11ff1, 1);
 	glitchPass.goWild = true;
 	$('#questions').hide();
-	beep();
 
 	var toAdd = cardToNum(postDataBody.suit, postDataBody.card);
 	var c = toAdd;
 	virCards[c].chosen = true;
-
-	console.log(toAdd);
 
 	rot = { x: virCards[c].cube.rotation.x , y: virCards[c].cube.rotation.y, z: virCards[c].cube.rotation.z };
 	tween.rot = new TWEEN.Tween(rot).to({ x: 0, y: 0, z: 0 }, 6000);

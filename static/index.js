@@ -48,7 +48,7 @@ function newQuestion() {
 
 var tween = {}, pos, rot;
 function reveal(postDataBody) {
-	$('h1').html('I HAVE GOT IT!');
+	$('h1').html('!!!');
 	$('header').css('background-color', 'purple');
 	renderer.setClearColor(0xff11ff1, 1);
 	glitchPass.goWild = true;
@@ -87,8 +87,9 @@ $(document).ready(function() {
 	});
 });
 
-var socket = io({ path: '/iwillgetit/socket.io'});
+var socket = io({ path: '/socket.io' });
 socket.on('card', function(postDataBody) {
+	console.log('test');
 	cardToKeep = cardToNum(postDataBody.suit, postDataBody.card);
 	reveal(postDataBody);
 });

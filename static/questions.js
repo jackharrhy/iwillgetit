@@ -24,9 +24,9 @@ var questions = [
 	{
 		q: 'Was the card an odd number?',
 		a: [
-			'I\'m sure of it!',
-			'Maybe...',
-			'No way!'
+			'It is',
+			'Maybe',
+			'No'
 		]
 	},
 	{
@@ -34,31 +34,6 @@ var questions = [
 		a: [
 			'For sure',
 			'No chance'
-		]
-	},
-	{
-		q: 'Are the cards in the background rad or not?',
-		a: [
-			'TOTALLY RAD MAAAAN',
-			'I guess',
-			'ZERO RAD'
-		]
-	},
-	{
-		q: 'Is your card ten of anything?',
-		a: [
-			'Why would I tell you?',
-			'It is',
-			'I\'m not sure that if it is or isn\'t',
-			'Ha ha no'
-		]
-	},
-	{
-		q: 'How good of a drama teacher is Flynn?',
-		a: [
-			'The best',
-			'Flynn > Everything else',
-			'MY IDOL'
 		]
 	},
 	{
@@ -91,47 +66,18 @@ var questions = [
 		]
 	},
 	{
-		q: 'I will get it, I\'m telling you',
-		a: [
-			'Ok...'
-		]
-	},
-	{
-		q: 'Do you doubt that I will get it?',
-		a: [
-			'Very much so',
-			'Not at all'
-		]
-	},
-	{
-		q: 'Is it a number?',
-		a: [
-			'No, its an ace',
-			'No, its of royal heritage!',
-			'Yes, its a number'
-		]
-	},
-	{
 		q: 'Is it a Jack?',
 		a: [
 			'Nope',
-			'No!, what an ugly name!',
-			'Yes, it is'
+			'Yep'
 		]
 	},
 	{
 		q: '5 of something?',
 		a: [
 			'No',
-			'Close...',
-			'Yes!'
-		]
-	},
-	{
-		q: 'I think I\'m going to get it...',
-		a: [
-			'Nope',
-			'Keep it up!'
+			'Close',
+			'Yes'
 		]
 	},
 	{
@@ -149,91 +95,10 @@ var questions = [
 		]
 	},
 	{
-		q: 'Cats or dogs?',
-		a: [
-			'Cats',
-			'Dogs'
-		]
-	},
-	{
-		q: 'Spicy food?',
-		a: [
-			'Hell yes!',
-			'Laaaaaame',
-			'Too hot :('
-		]
-	},
-	{
-		q: 'Do you like chocolate?',
-		a: [
-			'Yep',
-			'Nope'
-		]
-	},
-	{
 		q: '6 of diamonds?',
 		a: [
 			'Yep',
 			'Nope'
-		]
-	},
-	{
-		q: 'Do you like to read?',
-		a: [
-			'I do',
-			'I don\'t'
-		]
-	},
-	{
-		q: 'Ever tried to build a card castle?',
-		a: [
-			'Yep',
-			'Nope',
-			'It fell apart...'
-		]
-	},
-	{
-		q: 'Do you know how to swim?',
-		a: [
-			'Not very well...',
-			'I do',
-			'I swim as good as a board'
-		]
-	},
-	{
-		q: 'How many fingers am I holding up?',
-		a: [
-			'All of them',
-			'None of them'
-		]
-	},
-	{
-		q: 'How many fingers aren\'t I holding up?',
-		a: [
-			'All of them',
-			'None of them'
-		]
-	},
-	{
-		q: '1?',
-		a: [
-			'That\'s just a number',
-			'Yep',
-			'What?',
-			'Nope'
-		]
-	},
-	{
-		q: 'Is it a card?',
-		a: [
-			'<(0-0)>?',
-			'?<(0-0)>'
-		]
-	},
-	{
-		q: '10 of anything?',
-		a: [
-			'I\'m not telling'
 		]
 	},
 	{
@@ -246,8 +111,8 @@ var questions = [
 	{
 		q: '2 of something?',
 		a: [
-			'Of course!',
-			'Not the slightest'
+			'Yes',
+			'No'
 		]
 	},
 	{
@@ -257,17 +122,4 @@ var questions = [
 			'No, not diamonds'
 		]
 	},
-	{
-		q: 'Clubs?',
-		a: [
-			'Yes I go to clubs'
-		]
-	},
-	{
-		q: 'Just let me think for a second...',
-		a: [
-			'Sure thing',
-			'No, no thinking!'
-		]
-	}
 ];

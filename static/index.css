@@ -22,6 +22,9 @@ header {
 	width: 1.92307692308%;
 	height: 20px;
 }
+h3:hover {
+	color: #999;
+}
 
 #questions {
 	display: none;

@@ -5,7 +5,9 @@ A ThreeJS card trick, with a dead simple way of guessing any chosen card
 ## How to dazzle a crowd (with help of a friend)
 
 Start the main server.js file with node
+
 Navigate on a computer (in my case when I used this a class room smart board) to the root
+
 Have a sneaky friend in the room, have the page /thetrick/ open on their device
 
 Give someone a deck of cards, tell them to shuffle it however they like, and then show the audience; maybe even hide in the other room while they do

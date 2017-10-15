@@ -1,21 +1,25 @@
 # iwillgetit
 
-A ThreeJS card trick, with a dead simple way of guessing any chosen card
+A ThreeJS card trick; with a dead simple way of guessing any chosen card.
 
-## How to dazzle a crowd (with help of a friend)
+### How to dazzle a crowd (with help of a friend)
 
-Start the main server.js file with node
+Start the main server.js file with node.
 
-Navigate on a computer (in my case when I used this a class room smart board) to the root
+Navigate to a root of said server.
 
-Have a sneaky friend in the room, have the page /thetrick/ open on their device
+Have a sneaky friend in the room, and have the page /thetrick/ open on their device.
 
-Give someone a deck of cards, tell them to shuffle it however they like, and then show the audience; maybe even hide in the other room while they do
+Give anyone who isn't in on it a deck of cards.
 
-Let them answer the questions that pop up on the screen; it is recommended that you skim through my selection of questions before doing it yourself to make it a bit more relevant to your crowd
+Tell them to shuffle it however they like, and then show the audience the 'random card'.
 
-Once your sneaky friend presses the button, it will glitch the selected card to the front-center of the screen
+(Maybe even hide in the other room while they do)
 
-You get 100 for your magic trick and nobody really knows how you pulled it off
+Let them answer the questions that pop up on the screen; it is recommended that you skim through tge selection of questions before doing it yourself to make it a bit more obvious to the crowd.
+
+Once your sneaky friend presses the button, it will 'glitch', the selected card to the front-center of the screen.
+
+You get 100 for your magic trick and nobody really knows how you pulled it off.
 
 *(at least that how it worked for me)*
